@@ -15,6 +15,17 @@
             font-size: 16px;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const referer = document.referrer;
+
+            // Проверка, что запрос пришел от Telegram
+            if (!referer.includes("t.me") && !referer.includes("telegram")) {
+                // Если запрос не из Telegram, перенаправляем пользователя
+                window.location.href = "https://sp5had.github.io/access-denied"; // Здесь укажите страницу отказа в доступе или другую страницу
+            }
+        });
+    </script>
 </head>
 <body>
     <h1>Welcome to the Telegram Web App</h1>
